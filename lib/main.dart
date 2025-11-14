@@ -117,7 +117,7 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
             // ✅ Add navigator key for global navigation
             navigatorKey: navigatorKey,
-            title: 'Life Quote',
+            title: 'Cest La Vie',
             debugShowCheckedModeBanner: false,
             theme: AppTheme.lightTheme,
             darkTheme: AppTheme.darkTheme,

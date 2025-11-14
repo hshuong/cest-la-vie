@@ -1,5 +1,5 @@
-name: life_quote_app
-description: "Life Quote - Daily Motivation & Positive Quotes is your pocket source of inspiration and self-growth"
+name: cest_la_vie
+description: "Cest La Vie - French Life Quote - Daily Motivation & Positive Quotes is your pocket source of inspiration and self-growth"
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -16,7 +16,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 # In Windows, build-name is used as the major, minor, and patch parts
 # of the product and file versions while build-number is used as the build suffix.
-version: 1.0.4+7
+version: 1.0.0+1
 
 environment:
   sdk: ^3.9.2
@@ -94,7 +94,7 @@ flutter:
 
  # Khai báo assets để Flutter copy vào app
   assets:
-    - assets/databases/life_quotes_english.db
+    - assets/databases/french_life_quotes.db
     - assets/images/categories/
 
   fonts:

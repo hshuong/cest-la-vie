@@ -158,7 +158,7 @@ class _QuoteDetailScreenState extends State<QuoteDetailScreen>
     final colorScheme = Theme.of(context).colorScheme; // ✅ Get color scheme
     final quote = quotes[currentIndex];
     final textToShare =
-        '${quote.text}\n\n- ${quote.author}\n\n📱 Shared from Life Quotes App';
+        '${quote.text}\n\n- ${quote.author}\n\n📱 Shared from Cest La Vie App';
     HapticFeedback.selectionClick();
 
     try {
