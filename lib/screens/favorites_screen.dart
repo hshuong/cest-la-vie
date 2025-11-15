@@ -36,7 +36,7 @@ class FavoritesScreen extends StatelessWidget {
                   ),
                   SizedBox(height: Responsive.padding(context, 24)),
                   Text(
-                    'No Favorite Quotes Yet',
+                    'Aucune citation préférée pour le moment',
                     // ✅ Use text theme
                     style: textTheme.headlineMedium?.copyWith(
                       fontWeight: FontWeight.bold,
@@ -45,7 +45,7 @@ class FavoritesScreen extends StatelessWidget {
                   ),
                   SizedBox(height: Responsive.padding(context, 12)),
                   Text(
-                    'Start adding quotes to your favorites\nby tapping the heart icon ❤️',
+                    'Commencez à ajouter des citations à vos favoris\nen appuyant sur l\'icône en forme de cœur ❤️',
                     textAlign: TextAlign.center,
                     // ✅ Use text theme with onSurfaceVariant
                     style: textTheme.bodyMedium?.copyWith(

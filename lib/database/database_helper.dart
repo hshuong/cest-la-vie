@@ -16,7 +16,7 @@ class DatabaseHelper {
 
   Future<Database> get database async {
     if (_database != null) return _database!;
-    _database = await _initDB('life_quotes_english.db');
+    _database = await _initDB('french_life_quotes.db');
     return _database!;
   }
 

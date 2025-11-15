@@ -17,7 +17,7 @@ class ThemeSettingsScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: colorScheme.surface,
       appBar: AppBar(
-        title: const Text('Theme Settings'),
+        title: const Text('Paramètres du thème'),
         centerTitle: true,
         elevation: 0,
       ),
@@ -52,14 +52,14 @@ class ThemeSettingsScreen extends StatelessWidget {
                         ),
                         SizedBox(height: Responsive.padding(context, 16)),
                         Text(
-                          'Choose Your Theme',
+                          'Choisissez votre thème',
                           style: textTheme.headlineSmall?.copyWith(
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                         SizedBox(height: Responsive.padding(context, 8)),
                         Text(
-                          'Select the theme that suits you best',
+                          'Sélectionnez le thème qui vous convient le mieux',
                           style: textTheme.bodyMedium?.copyWith(
                             color: colorScheme.onSurfaceVariant,
                           ),
@@ -129,7 +129,7 @@ class ThemeSettingsScreen extends StatelessWidget {
                         SizedBox(width: Responsive.padding(context, 12)),
                         Expanded(
                           child: Text(
-                            'Your theme preference will be saved and applied across all screens.',
+                            'Votre préférence de thème sera enregistrée et appliquée sur tous les écrans.',
                             style: textTheme.bodySmall?.copyWith(
                               color: colorScheme.onSecondaryContainer,
                             ),

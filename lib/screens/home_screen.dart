@@ -362,7 +362,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin, 
                 );
               },
               iconSize: Responsive.fontSize(context, 24),
-              tooltip: 'Quote of the Day',
+              tooltip: 'Citation du jour',
             ),
           
           if (!_isSearching) const ThemeToggleButton(),
@@ -413,11 +413,11 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin, 
               items: const [
                 BottomNavigationBarItem(
                   icon: Icon(Icons.category),
-                  label: 'Categories',
+                  label: 'Catégories',
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(Icons.favorite),
-                  label: 'Favorites',
+                  label: 'Favoris',
                 ),
               ],
             )
@@ -429,7 +429,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin, 
 
   Widget _buildTitle() {
     return Text(
-      _selectedIndex == 0 ? 'Life Quote' : 'Favorites',
+      _selectedIndex == 0 ? 'Citation sur la vie' : 'Favoris',
     );
   }
 
@@ -444,7 +444,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin, 
         fontSize: Responsive.fontSize(context, 16),
       ),
       decoration: InputDecoration(
-        hintText: 'Search quotes...',
+        hintText: 'Rechercher des citations...',
         hintStyle: TextStyle(
           color: colorScheme.onSurfaceVariant.withValues(alpha:0.7),
           fontSize: Responsive.fontSize(context, 16),
@@ -485,12 +485,12 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin, 
             ),
             SizedBox(height: Responsive.padding(context, 16)),
             Text(
-              'Search for quotes',
+              'Rechercher des citations',
               style: textTheme.headlineSmall,
             ),
             SizedBox(height: Responsive.padding(context, 8)),
             Text(
-              'Enter keywords to find quotes',
+              'Entrez des mots-clés pour trouver des citations',
               style: textTheme.bodyMedium,
             ),
           ],
@@ -510,14 +510,14 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin, 
             ),
             SizedBox(height: Responsive.padding(context, 16)),
             Text(
-              'No results found',
+              'Aucun résultat trouvé',
               style: textTheme.headlineSmall?.copyWith(
                 fontWeight: FontWeight.bold,
               ),
             ),
             SizedBox(height: Responsive.padding(context, 8)),
             Text(
-              'Try different keywords',
+              'Essayez des mots-clés différents',
               style: textTheme.bodyMedium,
             ),
           ],
@@ -539,7 +539,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin, 
               ),
               SizedBox(width: Responsive.padding(context, 8)),
               Text(
-                'Found $_totalSearchResults quote${_totalSearchResults > 1 ? 's' : ''} • Showing ${_searchResults.length}',
+                'Trouvé $_totalSearchResults citation${_totalSearchResults > 1 ? 's' : ''} • Affichage de ${_searchResults.length}',
                 style: textTheme.labelLarge?.copyWith(
                   color: colorScheme.onSurface,
                 ),
@@ -590,7 +590,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin, 
               onPressed: _loadMoreSearchResults,
               icon: const Icon(Icons.expand_more),
               label: Text(
-                'Load More (${_totalSearchResults - _searchResults.length} remaining)',
+                'Charger plus (${_totalSearchResults - _searchResults.length} restant)',
                 style: TextStyle(
                   fontSize: Responsive.fontSize(context, 14),
                 ),
@@ -727,7 +727,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin, 
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Text(
-                  'Life Quotes',
+                  'Citation sur la vie',
                   style: textTheme.headlineMedium?.copyWith(
                     color: colorScheme.onPrimary,
                     fontWeight: FontWeight.bold,
@@ -735,7 +735,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin, 
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  'Inspire your day',
+                  'Inspirez votre journée',
                   style: textTheme.bodyMedium?.copyWith(
                     color: colorScheme.onPrimary.withValues(alpha: 0.8),
                   ),
@@ -746,7 +746,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin, 
           
           ListTile(
             leading: const Icon(Icons.category),
-            title: const Text('Categories'),
+            title: const Text('Catégories'),
             selected: _selectedIndex == 0,
             onTap: () {
               setState(() => _selectedIndex = 0);
@@ -756,7 +756,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin, 
           
           ListTile(
             leading: const Icon(Icons.favorite),
-            title: const Text('Favorites'),
+            title: const Text('Favoris'),
             selected: _selectedIndex == 1,
             onTap: () {
               setState(() => _selectedIndex = 1);
@@ -768,8 +768,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin, 
           
           ListTile(
             leading: const Icon(Icons.notifications_active),
-            title: const Text('Quote of the Day'),
-            subtitle: const Text('Daily notification'),
+            title: const Text('Citation du jour'),
+            subtitle: const Text('Notification quotidienne'),
             onTap: () {
               Navigator.pop(context);
               Navigator.push(
@@ -783,7 +783,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin, 
           
           ListTile(
             leading: const Icon(Icons.palette),
-            title: const Text('Theme Settings'),
+            title: const Text('Paramètres du thème'),
             onTap: () {
               Navigator.pop(context);
               Navigator.push(
@@ -956,7 +956,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin, 
       ),
       child: Center(
         child: Text(
-          'No quotes available',
+          'Aucun devis disponible',
           style: textTheme.titleMedium?.copyWith(
             color: Colors.white,
             fontWeight: FontWeight.bold,
@@ -1261,7 +1261,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin, 
             ),
             SizedBox(height: Responsive.padding(context, 16)),
             Text(
-              'Oops! Something went wrong',
+              'Oups! Quelque chose a mal tourné',
               style: textTheme.headlineSmall?.copyWith(
                 fontWeight: FontWeight.bold,
               ),
@@ -1281,7 +1281,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin, 
               },
               icon: const Icon(Icons.refresh),
               label: Text(
-                'Try Again',
+                'Réessayer',
                 style: TextStyle(fontSize: Responsive.fontSize(context, 14)),
               ),
             ),
@@ -1366,7 +1366,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin, 
           ),
           SizedBox(height: Responsive.padding(context, 16)),
           Text(
-            'No categories available',
+            'Aucune catégorie disponible',
             style: textTheme.headlineSmall,
           ),
           SizedBox(height: Responsive.padding(context, 16)),
@@ -1376,7 +1376,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin, 
               _loadRandomQuotesForPager();
             },
             icon: const Icon(Icons.refresh),
-            label: const Text('Reload'),
+            label: const Text('Recharger'),
           ),
         ],
       ),

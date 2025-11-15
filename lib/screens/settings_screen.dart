@@ -55,14 +55,14 @@ class _QuoteOfDaySettingsScreenState extends State<QuoteOfDaySettingsScreen> {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: const Text('Cancel'),
+            child: const Text('Annuler'),
           ),
           ElevatedButton(
             onPressed: () {
               Navigator.pop(context);
               openAppSettings();
             },
-            child: const Text('Open Settings'),
+            child: const Text('Ouvrir les paramètres'),
           ),
         ],
       ),
@@ -90,7 +90,7 @@ class _QuoteOfDaySettingsScreenState extends State<QuoteOfDaySettingsScreen> {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(
-              '✅ Daily quote enabled at ${_selectedTime.format(context)}',
+              '✅ Citation quotidienne activée à ${_selectedTime.format(context)}',
             ),
             backgroundColor: Colors.green,
             behavior: SnackBarBehavior.floating,
@@ -125,7 +125,7 @@ class _QuoteOfDaySettingsScreenState extends State<QuoteOfDaySettingsScreen> {
           if (mounted) {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
-                content: Text('❌ Failed to enable: ${e.toString()}'),
+                content: Text('❌ Échec de l\'activation : ${e.toString()}'),
                 backgroundColor: Colors.red,
                 behavior: SnackBarBehavior.floating,
                 duration: const Duration(seconds: 5),
@@ -144,7 +144,7 @@ class _QuoteOfDaySettingsScreenState extends State<QuoteOfDaySettingsScreen> {
       
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text('Daily quote disabled'),
+          content: Text('Citation quotidienne désactivée'),
           behavior: SnackBarBehavior.floating,
         ),
       );
@@ -197,7 +197,7 @@ class _QuoteOfDaySettingsScreenState extends State<QuoteOfDaySettingsScreen> {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
               content: Text(
-                '✅ Time updated to ${picked.format(context)}',
+                '✅ Heure mise à jour à ${picked.format(context)}',
               ),
               backgroundColor: Colors.green,
               behavior: SnackBarBehavior.floating,
@@ -208,7 +208,7 @@ class _QuoteOfDaySettingsScreenState extends State<QuoteOfDaySettingsScreen> {
           
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Text('❌ Failed to update time: ${e.toString()}'),
+              content: Text('❌ Échec de la mise à jour de l\'heure : ${e.toString()}'),
               backgroundColor: Colors.red,
               behavior: SnackBarBehavior.floating,
             ),
@@ -237,7 +237,7 @@ class _QuoteOfDaySettingsScreenState extends State<QuoteOfDaySettingsScreen> {
     
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
-        content: Text('🔔 Test notification sent! Tap it to view the quote.'),
+        content: Text('🔔 Notification de test envoyée ! Appuyez dessus pour voir la citation.'),
         behavior: SnackBarBehavior.floating,
         duration: Duration(seconds: 3),
       ),
@@ -253,7 +253,7 @@ class _QuoteOfDaySettingsScreenState extends State<QuoteOfDaySettingsScreen> {
     return Scaffold(
       backgroundColor: colorScheme.surface,
       appBar: AppBar(
-        title: const Text('Quote of the Day'),
+        title: const Text('Citation du jour'),
         elevation: 0,
       ),
       body: _isLoading
@@ -289,7 +289,7 @@ class _QuoteOfDaySettingsScreenState extends State<QuoteOfDaySettingsScreen> {
                         ),
                         SizedBox(height: Responsive.padding(context, 12)),
                         Text(
-                          'Daily Inspiration',
+                          'Inspiration Quotidienne',
                           style: textTheme.headlineMedium?.copyWith(
                             color: colorScheme.onPrimaryContainer,
                             fontWeight: FontWeight.bold,
@@ -297,7 +297,7 @@ class _QuoteOfDaySettingsScreenState extends State<QuoteOfDaySettingsScreen> {
                         ),
                         SizedBox(height: Responsive.padding(context, 8)),
                         Text(
-                          'Receive a motivational quote every day',
+                          'Recevez une citation motivante chaque jour',
                           style: textTheme.bodyMedium?.copyWith(
                             color: colorScheme.onPrimaryContainer,
                           ),
@@ -324,13 +324,13 @@ class _QuoteOfDaySettingsScreenState extends State<QuoteOfDaySettingsScreen> {
                             value: _isEnabled,
                             onChanged: _toggleNotification,
                             title: Text(
-                              'Daily Quote Notification',
+                              'Notification de citation quotidienne',
                               style: textTheme.titleLarge?.copyWith(
                                 color: colorScheme.onSurface,
                               ),
                             ),
                             subtitle: Text(
-                              _isEnabled ? 'Enabled' : 'Disabled',
+                              _isEnabled ? 'Activé' : 'Désactivé',
                               style: textTheme.bodyMedium?.copyWith(
                                 color: colorScheme.onSurfaceVariant,
                               ),
@@ -382,7 +382,7 @@ class _QuoteOfDaySettingsScreenState extends State<QuoteOfDaySettingsScreen> {
                               ),
                             ),
                             title: Text(
-                              'Notification Time',
+                              'Heure de notification',
                               style: textTheme.titleMedium?.copyWith(
                                 color: colorScheme.onSurface,
                               ),
@@ -410,7 +410,7 @@ class _QuoteOfDaySettingsScreenState extends State<QuoteOfDaySettingsScreen> {
                           child: OutlinedButton.icon(
                             onPressed: _testNotification,
                             icon: const Icon(Icons.send),
-                            label: const Text('Test Notification'),
+                            label: const Text('Tester la notification'),
                             style: OutlinedButton.styleFrom(
                               padding: EdgeInsets.all(Responsive.padding(context, 16)),
                               side: BorderSide(
@@ -450,7 +450,7 @@ class _QuoteOfDaySettingsScreenState extends State<QuoteOfDaySettingsScreen> {
                                   ),
                                   SizedBox(width: Responsive.padding(context, 8)),
                                   Text(
-                                    'How it works',
+                                    'Comment ça marche',
                                     style: textTheme.titleMedium?.copyWith(
                                       color: colorScheme.onTertiaryContainer,
                                       fontWeight: FontWeight.bold,
@@ -462,25 +462,25 @@ class _QuoteOfDaySettingsScreenState extends State<QuoteOfDaySettingsScreen> {
                               _buildInfoItem(
                                 context,
                                 Icons.check_circle_outline,
-                                'You will receive a random inspirational quote at your chosen time',
+                                'Vous recevrez une citation inspirante aléatoire à l\'heure que vous aurez choisie.',
                               ),
                               SizedBox(height: Responsive.padding(context, 12)),
                               _buildInfoItem(
                                 context,
                                 Icons.phone_android,
-                                'Notifications work even when the app is closed',
+                                'Les notifications fonctionnent même lorsque l\'application est fermée.',
                               ),
                               SizedBox(height: Responsive.padding(context, 12)),
                               _buildInfoItem(
                                 context,
                                 Icons.schedule,
-                                'You can change the time anytime',
+                                'Vous pouvez changer l\'heure à tout moment',
                               ),
                               SizedBox(height: Responsive.padding(context, 12)),
                               _buildInfoItem(
                                 context,
                                 Icons.settings,
-                                'Make sure "Alarms & reminders" permission is enabled in your device settings (required for Android 12+)',
+                                'Assurez-vous que la permission "Alarmes et rappels" est activée dans les paramètres de votre appareil (requis pour Android 12+)',
                               ),
                             ],
                           ),

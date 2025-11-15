@@ -113,7 +113,7 @@ class _QuoteDetailScreenState extends State<QuoteDetailScreen>
                 color: colorScheme.onInverseSurface, // ✅ Use theme color
               ),
               const SizedBox(width: 8),
-              Text(newStatus ? 'Added to favorites' : 'Removed from favorites'),
+              Text(newStatus ? 'Ajouté aux favoris' : 'Retiré des favoris'),
             ],
           ),
           duration: const Duration(seconds: 1),
@@ -142,7 +142,7 @@ class _QuoteDetailScreenState extends State<QuoteDetailScreen>
             children: [
               Icon(Icons.check_circle, color: colorScheme.onInverseSurface), // ✅ Use theme
               const SizedBox(width: 8),
-              const Text('Quote copied to clipboard!'),
+              const Text('Citation copiée dans le presse-papiers !'),
             ],
           ),
           duration: const Duration(seconds: 2),
@@ -167,7 +167,7 @@ class _QuoteDetailScreenState extends State<QuoteDetailScreen>
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: const Text('Failed to share quote'),
+            content: const Text('Impossible de partager la citation'),
             backgroundColor: colorScheme.error, // ✅ Use theme
           ),
         );
@@ -388,14 +388,14 @@ class _QuoteDetailScreenState extends State<QuoteDetailScreen>
         children: [
           _buildActionButton(
             icon: Icons.share_rounded,
-            label: 'Share',
+            label: 'Partager',
             color: Colors.white,
             onPressed: _shareQuote,
           ),
           
           _buildActionButton(
             icon: quote.isFavorite ? Icons.favorite : Icons.favorite_border,
-            label: quote.isFavorite ? 'Saved' : 'Save',
+            label: quote.isFavorite ? 'Enregistré' : 'Enregistrer',
             // ✅ Use error color for favorite heart (maintains red color)
             color: quote.isFavorite ? colorScheme.error : Colors.white,
             onPressed: _toggleFavorite,
@@ -404,7 +404,7 @@ class _QuoteDetailScreenState extends State<QuoteDetailScreen>
           
           _buildActionButton(
             icon: Icons.content_copy_rounded,
-            label: 'Copy',
+            label: 'Copie',
             color: Colors.white,
             onPressed: _copyQuote,
           ),

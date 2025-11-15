@@ -1,4 +1,4 @@
-package com.hoangangiang.life_quote_english
+package com.hoangangiang.french_life_quote
 
 import io.flutter.embedding.android.FlutterActivity
 

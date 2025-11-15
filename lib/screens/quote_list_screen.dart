@@ -323,7 +323,7 @@ class _QuoteListScreenState extends State<QuoteListScreen> {
             ),
             SizedBox(height: Responsive.padding(context, 16)),
             Text(
-              'Oops! Something went wrong',
+              'Oups ! Il y a eu un problème.',
               style: textTheme.headlineSmall?.copyWith(
                 fontWeight: FontWeight.bold,
               ),
@@ -341,7 +341,7 @@ class _QuoteListScreenState extends State<QuoteListScreen> {
               },
               icon: const Icon(Icons.refresh),
               label: Text(
-                'Try Again',
+                'Réessayer',
                 style: TextStyle(fontSize: Responsive.fontSize(context, 14)),
               ),
             ),
@@ -369,14 +369,14 @@ class _QuoteListScreenState extends State<QuoteListScreen> {
             ),
             SizedBox(height: Responsive.padding(context, 16)),
             Text(
-              'No quotes found',
+              'Aucune citation trouvée',
               style: textTheme.headlineSmall?.copyWith(
                 fontWeight: FontWeight.bold,
               ),
             ),
             SizedBox(height: Responsive.padding(context, 8)),
             Text(
-              'Try another category',
+              'Essayez une autre catégorie',
               style: textTheme.bodyMedium,
             ),
           ],

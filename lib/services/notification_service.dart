@@ -620,7 +620,7 @@ Future<void> scheduleDailyQuote({
     // Schedule the notification with exact timing
     await _notifications.zonedSchedule(
       quoteOfTheDayId,
-      'Quote of the Day 💭',
+      'Citation du jour 💭',
       _truncateQuote(quote.text, 100),
       scheduledDate,
       notificationDetails,
@@ -709,7 +709,7 @@ Future<void> scheduleDailyQuote({
 
     await _notifications.show(
       0,
-      'Quote of the Day 💭',
+      'Citation du jour 💭',
       _truncateQuote(quoteText, 100),
       notificationDetails,
       payload: payload, // ✅ Add payload for navigation
