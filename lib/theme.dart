@@ -3,6 +3,7 @@
 // Generated from Material Theme Builder with seed color: #006874
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class AppTheme {
   // ==========================================
@@ -118,6 +119,14 @@ class AppTheme {
         backgroundColor: lightColorScheme.surface,
         foregroundColor: lightColorScheme.onSurface,
         surfaceTintColor: lightColorScheme.surfaceTint,
+
+        systemOverlayStyle: SystemUiOverlayStyle(
+          statusBarColor: Colors.transparent,
+          statusBarIconBrightness: Brightness.dark,
+          systemNavigationBarColor: Colors.transparent,
+          systemNavigationBarIconBrightness: Brightness.dark,
+        ),
+
         iconTheme: IconThemeData(
           color: lightColorScheme.onSurface,
           size: 24,
@@ -488,6 +497,15 @@ class AppTheme {
         backgroundColor: darkColorScheme.surface,
         foregroundColor: darkColorScheme.onSurface,
         surfaceTintColor: darkColorScheme.surfaceTint,
+
+        // ✅ THÊM systemOverlayStyle cho Dark theme
+        systemOverlayStyle: const SystemUiOverlayStyle(
+          statusBarColor: Colors.transparent,
+          statusBarIconBrightness: Brightness.light,
+          systemNavigationBarColor: Colors.transparent,
+          systemNavigationBarIconBrightness: Brightness.light,
+        ),
+        
         iconTheme: IconThemeData(
           color: darkColorScheme.onSurface,
           size: 24,

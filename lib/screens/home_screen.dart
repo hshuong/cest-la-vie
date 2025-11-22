@@ -407,19 +407,22 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin, 
       ),
       
       bottomNavigationBar: showBottomNav
-          ? BottomNavigationBar(
-              currentIndex: _selectedIndex,
-              onTap: (index) => setState(() => _selectedIndex = index),
-              items: const [
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.category),
-                  label: 'Catégories',
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.favorite),
-                  label: 'Favoris',
-                ),
-              ],
+          ? SafeArea(
+              top: false, // Chỉ apply padding ở bottom
+              child: BottomNavigationBar(
+                currentIndex: _selectedIndex,
+                onTap: (index) => setState(() => _selectedIndex = index),
+                items: const [
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.category),
+                    label: 'Catégories',
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.favorite),
+                    label: 'Favoris',
+                  ),
+                ],
+              ),
             )
           : null,
       

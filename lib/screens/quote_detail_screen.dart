@@ -247,6 +247,7 @@ class _QuoteDetailScreenState extends State<QuoteDetailScreen>
             right: 0,
             bottom: 0,
             child: SafeArea(
+              top: false, // Chỉ apply padding ở bottom
               child: _buildActionButtons(quotes[currentIndex]),
             ),
           ),
