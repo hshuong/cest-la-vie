@@ -97,23 +97,23 @@ class Responsive {
 
   static double categoryCardAspectRatio(BuildContext context) {
     final w = width(context);
-    if (w < mobileSmall) return 0.85;  // Card dọc rõ
-    if (w < mobile) return 0.88;       // Portrait đẹp
-    if (w < tablet) return 0.90;       // Cân đối
+    if (w < mobileSmall) return 0.75;  // Card dọc rõ
+    if (w < mobile) return 0.80;       // Portrait đẹp
+    if (w < tablet) return 0.85;       // Cân đối
     return 0.8;                        // Tablet/Desktop
   }
 
-  /// Card title style với line height tốt hơn
-
-  // Style cho title bình thường
-  static TextStyle categoryCardTitleStyle(BuildContext context) {
-    return TextStyle(
-      color: Colors.white,
-      fontSize: categoryCardTitleSize(context),
-      fontWeight: FontWeight.bold,
-      height: 1.6,
-    );
-  }
+/// Card title style với line height và spacing tốt hơn
+static TextStyle categoryCardTitleStyle(BuildContext context) {
+  return TextStyle(
+    color: Colors.white,
+    fontSize: categoryCardTitleSize(context),
+    fontWeight: FontWeight.bold,
+    height: 1.3,  // Giảm từ 1.6 để chữ gọn hơn
+    letterSpacing: 0.3,  // Thêm letter spacing để dễ đọc
+    wordSpacing: 1.0,    // Thêm word spacing để tránh word break
+  );
+}
 
   // Style cho title highlight (nếu cần)
   static TextStyle categoryCardTitleStyleHighlight(BuildContext context) {
@@ -132,14 +132,27 @@ class Responsive {
     );
   }
 
-  /// Card title font size (giảm để fit 2 dòng)
-  static double categoryCardTitleSize(BuildContext context) {
-    final w = width(context);
-    if (w < mobileSmall) return 14;
-    if (w < mobile) return 15;
-    if (w < tablet) return 16;
-    return 17;
+/// Card title font size - giảm để tránh word break
+static double categoryCardTitleSize(BuildContext context) {
+  final w = width(context);
+  final textScaleFactor = MediaQuery.of(context).textScaler.scale(1.0);
+  
+  // Base size nhỏ hơn để có buffer cho accessibility text scale
+  double baseSize;
+  if (w < mobileSmall) {
+    baseSize = 12;  // Giảm từ 14
+  } else if (w < mobile) {
+    baseSize = 13;  // Giảm từ 15
+  } else if (w < tablet) {
+    baseSize = 14;  // Giảm từ 16
+  } else {
+    baseSize = 15;  // Giảm từ 17
   }
+  
+  // Giới hạn text scale để tránh quá lớn
+  final limitedScale = textScaleFactor.clamp(0.8, 1.3);
+  return baseSize * limitedScale;
+}
 
   /// Card icon size
   static double categoryCardIconSize(BuildContext context) {

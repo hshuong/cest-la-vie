@@ -1468,11 +1468,27 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin, 
                       mainAxisAlignment: MainAxisAlignment.end,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          category.name,
-                          style: Responsive.categoryCardTitleStyle(context),
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
+                        LayoutBuilder(
+                          builder: (context, constraints) {
+                            return ConstrainedBox(
+                              constraints: BoxConstraints(
+                                maxWidth: constraints.maxWidth,
+                                minHeight:
+                                    Responsive.categoryCardTitleSize(context) *
+                                    2.6, // Đảm bảo đủ chiều cao cho 2 dòng
+                              ),
+                              child: Text(
+                                category.name,
+                                style: Responsive.categoryCardTitleStyle(
+                                  context,
+                                ),
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                softWrap: true,
+                                textAlign: TextAlign.left,
+                              ),
+                            );
+                          },
                         ),
                       ],
                     ),
